@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Title</title>
+</head>
+<body>
+    <h1>Amazing Title</h1>
+    <p style = "color: darkorange;"> You can style this however you want</p>
+
+    <table>
+        <caption><h2>List Of Persons</h2></caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="person: ${persons}">
+                <td th:text="${person.id}"/>
+                <td th:text="${person.firstName}"/>
+                <td th:text="${person.lastName}"/>
+        </tbody>
+    </table>
+
+    <hr>
+    <p>Whatever</p>
+    <p>Whatever2</p>
+
+    <hr>
+    <input type="text" value="Enter your name"/>
+    <input type="password" />
+</body>
+</html>
