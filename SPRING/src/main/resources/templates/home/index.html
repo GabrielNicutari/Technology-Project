@@ -1,37 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Test Title</title>
+        <meta charset="UTF-8">
+        <title>Test Title</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <h1>Amazing Title</h1>
-    <p style = "color: darkorange;"> You can style this however you want</p>
 
-    <table>
-        <caption><h2>List Of Persons</h2></caption>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-            </tr>
-        </thead>
+    <header>
+        <div id="header-wrapper">
+            <h1>IADb</h1>
 
-        <tbody>
-            <tr th:each="person: ${persons}">
-                <td th:text="${person.id}"/>
-                <td th:text="${person.firstName}"/>
-                <td th:text="${person.lastName}"/>
-        </tbody>
-    </table>
+            <!-- SEARCH BAR -->
+            <h2>Search for a person</h2>
 
-    <hr>
-    <p>Whatever</p>
-    <p>Whatever2</p>
+            <!-- The form -->
+            <form class="example" action="action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
 
-    <hr>
-    <input type="text" value="Enter your name"/>
-    <input type="password" />
+    </header>
+
+
+    <main>
+        <div id="page-wrapper">
+            <br/>
+            <br/>
+            <h2>List of Persons</h2>
+            <a href="@{'/create/'+${person.id}}">
+                <button class="btn-create">Add new</button>
+            </a>
+            <table>
+                <!--caption><h2>List Of Persons</h2></caption-->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="person: ${persons}">
+                        <td th:text="${person.id}"/>
+                        <td th:text="${person.firstName}"/>
+                        <td th:text="${person.lastName}"/>
+                        <td>
+                            <a th:href="@{'/delete/'+${person.id}}">
+                                <button class="btn-delete"><i class="fa fa-trash"></i></button>
+                            </a>
+                        </td>
+                        <td>
+                            <a th:href="@{'/update/'+${person.id}}">
+                                <button class="btn-update"><i class="fa fa-edit"></i></button>
+                            </a>
+                        </td>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+
+    <buttom>
+        <div id="buttom-wrapper">
+        </div>
+    </buttom>
+
+
 </body>
 </html>
