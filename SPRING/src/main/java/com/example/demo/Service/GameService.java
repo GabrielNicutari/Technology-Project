@@ -1,25 +1,23 @@
 package com.example.demo.Service;
 
-import com.example.demo.Model.Person;
-import com.example.demo.Repository.PersonRepository;
+import com.example.demo.Model.Game;
+import com.example.demo.Repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
-public class PersonService {
+public class GameService {
 
     @Autowired
-    private PersonRepository personRepository;
+    private GameRepository gameRepository;
 
     //List<Person> persons = new ArrayList<>();
 
-    public List<Person> fetchAll() {
+    public List<Game> fetchAll() {
         //personRepository.fetchAll().forEach(persons::add);  //Get everything from the db and add it into an arraylist
-        return personRepository.fetchAll();
+        return gameRepository.fetchAll();
     }
 
 //    public Person getPerson(int id) {
