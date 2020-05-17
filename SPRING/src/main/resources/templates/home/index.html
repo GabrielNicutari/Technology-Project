@@ -56,6 +56,8 @@
                         <th>Developer</th>
                         <th>Publisher</th>
                         <th>Engine</th>
+                        <th>Action</th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -71,15 +73,12 @@
                         <td th:text="${game.publisher}"/>
                         <td th:text="${game.engine}"/>
                         <td>
-                            <a th:href="@{'/delete/'+${game.id}}">
-                                <button class="btn-delete"><i class="fa fa-trash"></i></button>
-                            </a>
+                            <a th:href="@{/games/delete/(id=${game.id})}" class="btn-delete"><i class ="fa fa-trash"></i></a>
                         </td>
                         <td>
-                            <a th:href="@{'/update/'+${game.id}}">
-                                <button class="btn-update"><i class="fa fa-edit"></i></button>
-                            </a>
+                            <a th:href="@{/games/update/(id=${game.id})}" class="btn-update"><i class ="fa fa-update"></i></a>
                         </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -100,16 +99,16 @@
 
     <script th:inline="javascript">
 
-        /*<[CDATA[*/
-        var games = /*[[${games}]]*/;
-        /*]]*/
+        /*<![CDATA[*/
+        let games = [[${games}]];
+        /*]]>*/
 
         $('#txtSearch').on('keyup', function(){
 
-            var value = $(this).val();
+            let value = $(this).val();
 
             //Get filtered games list
-            var data = FilterFunction(value, games)
+            let data = FilterFunction(value, games)
 
             //Clear the table and rebuild using new filtered data
             rebuildTable(data)
@@ -117,10 +116,10 @@
         });
 
         function FilterFunction(value, data) {
-            var filteredData = [];
-            for(var i = 0; i < data.length; i++) {
+            let filteredData = [];
+            for(let i = 0; i < data.length; i++) {
                 value = value.toLowerCase();
-                var name = data[i].name.toLowerCase();
+                let name = data[i].name.toLowerCase();
 
                 if(name.includes(value)) {
                     filteredData.push(data[i]);
@@ -130,23 +129,49 @@
         }
 
         function  rebuildTable(data) {
-            var table = document.getElementById('gamesTable')
+            let table = document.getElementById('gamesTable')
             table.innerHTML=''
-            for(var i = 0; i < data.lenbits; i++) {
-                var row = `<tr>
-                                <td>${data[i].id}</td>
-                                <td>${data[i].name}</td>
-                                <td>${data[i].genre}</td>
-                                <td>${data[i].rating}</td>
-                                <td>${data[i].mode}</td>
-                                <td>${data[i].releaseDate}</td>
-                                <td>${data[i].developer}</td>
-                                <td>${data[i].publisher}</td>
-                                <td>${data[i].engine}</td>
-                             </tr>`
-                            table.innerHTML += row;
-            }
 
+            let header = `<thead>
+                     <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Genre</th>
+                        <th>Rating</th>
+                        <th>Mode</th>
+                        <th>Release Date</th>
+                        <th>Developer</th>
+                        <th>Publisher</th>
+                        <th>Engine</th>
+                        <th>Action</th>
+                        <th></th>
+                    </tr>
+                </thead>`
+
+            table.innerHTML += header;
+            for(let i = 0; i < data.length; i++) {
+                let row = `<tr>
+                        <td>${data[i].id}</td>
+                        <td>${data[i].name}</td>
+                        <td>${data[i].genre}</td>
+                        <td>${data[i].rating}</td>
+                        <td>${data[i].mode}</td>
+                        <td>${data[i].releaseDate}</td>
+                        <td>${data[i].developer}</td>
+                        <td>${data[i].publisher}</td>
+                        <td>${data[i].engine}</td>
+                        <td>
+                            <a th:href="@{/games/delete/(id=${data[i].id})}" class="btn-delete"><i class ="fa fa-trash"></i></a>
+                        </td>
+                        <td>
+                            <a th:href="@{/games/update/(id=${data[i].id})}" class="btn-update"><i class ="fa fa-update"></i></a>
+                        </td>
+
+
+                    </tr>`
+
+                table.innerHTML += row;
+            }
         }
 
     </script>
