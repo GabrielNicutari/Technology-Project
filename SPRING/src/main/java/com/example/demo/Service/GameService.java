@@ -20,11 +20,7 @@ public class GameService {
         return gameRepository.fetchAll();
     }
 
-//    public Person getPerson(int id) {
-//        return persons.stream().filter(p -> p.getId() == id).findFirst().get();
-//    }
-
-//    public void addPerson(Person person) {
-//        personRepository.save(person);
-//    }
+    public boolean deleteRow(int id) {
+        return gameRepository.deleteRow(id);
+    }
 }

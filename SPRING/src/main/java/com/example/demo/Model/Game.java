@@ -5,8 +5,8 @@ import java.sql.Date;
 
 @Entity
 public class Game {
+
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String genre;
@@ -31,6 +31,8 @@ public class Game {
         this.publisher = publisher;
         this.engine = engine;
     }
+
+
 
     public int getId() {
         return id;

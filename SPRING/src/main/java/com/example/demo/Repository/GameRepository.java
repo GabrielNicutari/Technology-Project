@@ -20,4 +20,9 @@ public class GameRepository {
         RowMapper<Game> rowMapper = new BeanPropertyRowMapper<>(Game.class);
         return template.query(query, rowMapper);
     }
+
+    public Boolean deleteRow(int id) {
+        String query = "DELETE FROM games WHERE id = ?";
+        return template.update(query, id) < 0;
+    }
 }
