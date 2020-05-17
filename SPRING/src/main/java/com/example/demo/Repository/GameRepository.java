@@ -2,6 +2,8 @@ package com.example.demo.Repository;
 
 import com.example.demo.Model.Game;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -20,4 +22,5 @@ public class GameRepository {
         RowMapper<Game> rowMapper = new BeanPropertyRowMapper<>(Game.class);
         return template.query(query, rowMapper);
     }
+
 }
