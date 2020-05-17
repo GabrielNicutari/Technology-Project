@@ -21,7 +21,7 @@ public class HomeController {
     }
 
     @GetMapping("/games")
-    public String persons(Model model) {
+    public String games(Model model) {
         List<Game> gameList = gameService.fetchAll();
         model.addAttribute("games", gameList);
         return "home/index";
