@@ -27,6 +27,16 @@ public class HomeController {
         return "home/index";
     }
 
+
+    @RequestMapping(value="/games/delete", method = {RequestMethod.DELETE, RequestMethod.GET})
+    //@GetMapping("/games/delete/{id}")
+    public String delete(int id) {
+        boolean deleted = gameService.deleteRow(id);
+        return "redirect:/games";
+    }
+
+
+
 //    public List<Person> getAllPersons() {
 //        return personService.fetchAll();
 //    }

@@ -23,4 +23,8 @@ public class GameRepository {
         return template.query(query, rowMapper);
     }
 
+    public Boolean deleteRow(int id) {
+        String query = "DELETE FROM games WHERE id = ?";
+        return template.update(query, id) < 0;
+    }
 }
