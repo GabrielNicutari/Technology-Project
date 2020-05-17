@@ -23,4 +23,9 @@ public class GameService {
     public boolean deleteRow(int id) {
         return gameRepository.deleteRow(id);
     }
+
+    //UPDATE METHOD
+    //public void update(Game) {
+        //gameRepository.save(Game);
+    //}
 }

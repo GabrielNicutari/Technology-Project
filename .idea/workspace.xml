@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5f837af-cd29-475e-9222-0df5cb23b1c0" name="Default Changelist" comment="" />
+    <list default="true" id="e5f837af-cd29-475e-9222-0df5cb23b1c0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPRING/src/main/java/com/example/demo/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SPRING/src/main/java/com/example/demo/Controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPRING/src/main/java/com/example/demo/Service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SPRING/src/main/java/com/example/demo/Service/GameService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +47,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1bxAHoHTAaS93QoXlmCpHP6yUsf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,6 +64,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../KailuaCarRental" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
