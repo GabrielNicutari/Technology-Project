@@ -24,6 +24,10 @@ public class GameService {
        gameRepository.add(g);
     }
 
+    public Game getOne(int id) {
+        return gameRepository.findById(id);
+    }
+
     public boolean deleteRow(int id) {
         return gameRepository.deleteRow(id);
     }

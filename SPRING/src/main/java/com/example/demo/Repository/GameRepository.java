@@ -40,4 +40,10 @@ public class GameRepository {
         RowMapper<Game> rowMapper = new BeanPropertyRowMapper<>(Game.class);
         return template.query(query, rowMapper);
     }
+
+    public Game findById(int id) {
+        String query = "SELECT * FROM games WHERE id = ?";
+        RowMapper<Game> rowMapper = new BeanPropertyRowMapper<>(Game.class);
+        return template.queryForObject(query, rowMapper, id);
+    }
 }

@@ -80,6 +80,7 @@
                             <div class="btn-group">
 <!--                                <a href="" class="btn-delete deleteButton"><i class ="fa fa-trash"></i></a>-->
                                 <a th:href="@{/games/delete/(id=${game.id})}" class="btn-delete deleteButton"><i class ="fa fa-trash"></i></a>
+<!--                                <a th:href="@{/games/update/(id=${game.id})}" class="btn-update editButton"><i class="fa fa-edit"></i></a>-->
                                 <a th:href="@{/games/getOne/(id=${game.id})}" class="btn-update editButton"><i class="fa fa-edit"></i></a>
                             </div>
                         </td>
@@ -254,13 +255,12 @@
     </div>
   
     <!-- edit bootstrap modal -->
-    <div>
-        <form class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
             <form th:action="@{/games/update}" method="put">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="editModalLabel">Edit game</h5>
+                            <h5 class="modal-title" id="editModalLabel">Edit Game</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -315,12 +315,11 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-primary">Modify</button>
                         </div>
                     </div>
                 </div>
             </form>
-        </form>
     </div>
     
     <!-- delete bootstrap modal -->

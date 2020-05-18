@@ -38,6 +38,12 @@ public class HomeController {
         return "home/index";
     }
 
+    @RequestMapping("/games/getOne")
+    @ResponseBody
+    public Game getOne(int id) {
+        return gameService.getOne(id);
+    }
+
     @PostMapping(value="/games/add")
     public String add(@ModelAttribute Game g) {
         gameService.add(g);
