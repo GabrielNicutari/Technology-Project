@@ -25,4 +25,12 @@ public class GameRepository {
         String query = "DELETE FROM games WHERE id = ?";
         return template.update(query, id) < 0;
     }
+
+   public Game add(Game g) {
+        String query = "INSERT INTO games" +
+                "VALUES (default, ?, ?, ?, ?, ?, ?, ?, ?)";
+        template.update(query, g.getId(), g.getName(), g.getGenre(), g.getMode(), g.getReleaseDate(),
+                g.getDeveloper(), g.getPublisher(), g.getEngine());
+        return null;
+    }
 }

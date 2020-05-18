@@ -20,6 +20,10 @@ public class GameService {
         return gameRepository.fetchAll();
     }
 
+    public Game add(Game g) {
+        return gameRepository.add(g);
+    }
+
     public boolean deleteRow(int id) {
         return gameRepository.deleteRow(id);
     }

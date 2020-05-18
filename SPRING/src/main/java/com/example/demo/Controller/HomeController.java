@@ -27,6 +27,11 @@ public class HomeController {
         return "home/index";
     }
 
+    @PostMapping(value="/games/add")
+    public String add(@ModelAttribute Game g) {
+        gameService.add(g);
+        return "redirect:/games";
+    }
 
     @RequestMapping(value="/games/delete", method = {RequestMethod.DELETE, RequestMethod.GET})
     //@GetMapping("/games/delete/{id}")
