@@ -3,9 +3,11 @@ package com.example.demo.Controller;
 import com.example.demo.Model.Game;
 import com.example.demo.Service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.List;
 
@@ -38,9 +40,15 @@ public class HomeController {
         return "home/index";
     }
 
-    @RequestMapping("/games/getOne/{id}")
+//    @RequestMapping("/games/getOne/{id}")
+//    @ResponseBody
+//    public Game getOne(@PathVariable ("id") int id) {
+//        return gameService.getOne(id);
+//    }
+
+    @RequestMapping("/games/getOne")
     @ResponseBody
-    public Game getOne(@PathVariable ("id")int id) {
+    public Game getOne(int id) {
         return gameService.getOne(id);
     }
 
@@ -59,8 +67,8 @@ public class HomeController {
 
     //UPDATE METHOD
     @RequestMapping(value="/games/update", method = {RequestMethod.PUT, RequestMethod.GET})
-    public String update(Game g, int id) {
-       gameService.update(g, id);
+    public String update(@ModelAttribute Game game) {
+        gameService.update(game, game.getId());
         return "redirect:/games";
     }
 }

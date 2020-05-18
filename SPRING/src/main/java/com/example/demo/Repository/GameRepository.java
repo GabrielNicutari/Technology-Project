@@ -48,8 +48,7 @@ public class GameRepository {
     }
 
     public void update(Game g, int id) {
-        String query = "INSERT INTO games(name, genre, rating, mode, releaseDate, developer, publisher, engine)" +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?) WHERE id= ?";
+        String query = "UPDATE games SET name = ?, genre = ?, rating = ?, mode = ?, releaseDate = ?, developer = ?, publisher = ?, engine = ? WHERE id= ?";
         template.update(query, g.getName(), g.getGenre(), g.getRating(), g.getMode(), g.getReleaseDate(),
                 g.getDeveloper(), g.getPublisher(), g.getEngine(), id);
     }

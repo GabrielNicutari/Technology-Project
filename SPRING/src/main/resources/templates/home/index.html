@@ -80,7 +80,7 @@
                             <div class="btn-group">
 <!--                                <a href="" class="btn-delete deleteButton"><i class ="fa fa-trash"></i></a>-->
                                 <a th:href="@{/games/delete/(id=${game.id})}" class="btn-delete deleteButton"><i class ="fa fa-trash"></i></a>
-<!--                                <a th:href="@{/games/update/(id=${game.id})}" class="btn-update editButton"><i class="fa fa-edit"></i></a>-->
+<!--                                <a th:href="@{/games/getOne/${game.id}}" class="btn-update editButton"><i class="fa fa-edit"></i></a>-->
                                 <a th:href="@{/games/getOne/(id=${game.id})}" class="btn-update editButton"><i class="fa fa-edit"></i></a>
                             </div>
                         </td>
@@ -269,47 +269,47 @@
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Id:</label>
-                                <input type="text" class="form-control" id="idEdit" name="idEdit" readonly>
+                                <input type="text" class="form-control" id="idEdit" name="id" readonly>
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Name:</label>
-                                <input type="text" class="form-control" id="nameEdit" name="nameEdit">
+                                <input type="text" class="form-control" id="nameEdit" name="name">
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Genre:</label>
-                                <input type="text" class="form-control" id="genreEdit" name="genreEdit">
+                                <input type="text" class="form-control" id="genreEdit" name="genre">
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Rating:</label>
-                                <input type="text" class="form-control" id="ratingEdit" name="ratingEdit">
+                                <input type="text" class="form-control" id="ratingEdit" name="rating">
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Mode:</label>
-                                <input type="text" class="form-control"  id="modeEdit" name="modeEdit">
+                                <input type="text" class="form-control"  id="modeEdit" name="mode">
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Release date:</label>
-                                <input type="text" class="form-control"  id="releaseDateEdit" name="releaseDateEdit">
+                                <input type="text" class="form-control"  id="releaseDateEdit" name="releaseDate">
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Developer:</label>
-                                <input type="text" class="form-control"  id="developerEdit" name="developerEdit">
+                                <input type="text" class="form-control"  id="developerEdit" name="developer">
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Publisher:</label>
-                                <input type="text" class="form-control"  id="publisherEdit" name="publisherEdit">
+                                <input type="text" class="form-control"  id="publisherEdit" name="publisher">
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Engine:</label>
-                                <input type="text" class="form-control"  id="engineEdit" name="engineEdit">
+                                <input type="text" class="form-control"  id="engineEdit" name="engine">
                             </div>
 
                         </div>
