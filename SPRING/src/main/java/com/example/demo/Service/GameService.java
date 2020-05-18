@@ -23,4 +23,17 @@ public class GameService {
     public boolean deleteRow(int id) {
         return gameRepository.deleteRow(id);
     }
+<<<<<<< Updated upstream
+=======
+
+    //Get games by keyword
+    public List<Game> findByKeyWord(String keyword) {
+        return gameRepository.findByKeyWord(keyword);
+    }
+  
+    //UPDATE METHOD
+    //public void update(Game) {
+        //gameRepository.save(Game);
+    //}
+>>>>>>> Stashed changes
 }

@@ -21,9 +21,20 @@ public class HomeController {
     }
 
     @GetMapping("/games")
-    public String games(Model model) {
+    public String games(Model model, String keyword) {
         List<Game> gameList = gameService.fetchAll();
         model.addAttribute("games", gameList);
+
+        if (keyword != null) {
+            if(keyword.equals("")) {
+                return "redirect:/games";
+            } else {
+                model.addAttribute("games", gameService.findByKeyWord(keyword));
+            }
+        } else {
+            model.addAttribute("games", gameService.fetchAll());
+        }
+
         return "home/index";
     }
 
