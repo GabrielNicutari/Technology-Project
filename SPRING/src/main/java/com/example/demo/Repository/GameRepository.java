@@ -23,12 +23,11 @@ public class GameRepository {
         return template.query(query, rowMapper);
     }
   
-    public Game add(Game g) {
-        String query = "INSERT INTO games" +
-                "VALUES (default, ?, ?, ?, ?, ?, ?, ?, ?)";
-        template.update(query, g.getId(), g.getName(), g.getGenre(), g.getMode(), g.getReleaseDate(),
+    public void add(Game g) {
+        String query = "INSERT INTO games(name, genre, rating, mode, releaseDate, developer, publisher, engine)" +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        template.update(query, g.getName(), g.getGenre(), g.getRating(), g.getMode(), g.getReleaseDate(),
                 g.getDeveloper(), g.getPublisher(), g.getEngine());
-        return null;
     }
 
     public Boolean deleteRow(int id) {
