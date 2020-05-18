@@ -46,4 +46,11 @@ public class GameRepository {
         RowMapper<Game> rowMapper = new BeanPropertyRowMapper<>(Game.class);
         return template.queryForObject(query, rowMapper, id);
     }
+
+    public void update(Game g, int id) {
+        String query = "INSERT INTO games(name, genre, rating, mode, releaseDate, developer, publisher, engine)" +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?) WHERE id= ?";
+        template.update(query, g.getName(), g.getGenre(), g.getRating(), g.getMode(), g.getReleaseDate(),
+                g.getDeveloper(), g.getPublisher(), g.getEngine(), id);
+    }
 }

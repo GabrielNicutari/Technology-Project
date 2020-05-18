@@ -38,9 +38,9 @@ public class HomeController {
         return "home/index";
     }
 
-    @RequestMapping("/games/getOne")
+    @RequestMapping("/games/getOne/{id}")
     @ResponseBody
-    public Game getOne(int id) {
+    public Game getOne(@PathVariable ("id")int id) {
         return gameService.getOne(id);
     }
 
@@ -59,8 +59,8 @@ public class HomeController {
 
     //UPDATE METHOD
     @RequestMapping(value="/games/update", method = {RequestMethod.PUT, RequestMethod.GET})
-    public String update(Game g) {
-       gameService.update(g);
+    public String update(Game g, int id) {
+       gameService.update(g, id);
         return "redirect:/games";
     }
 }

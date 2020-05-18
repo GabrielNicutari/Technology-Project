@@ -32,8 +32,8 @@ public class GameService {
         return gameRepository.deleteRow(id);
     }
 
-    public void update(Game g) {
-        gameRepository.add(g);
+    public void update(Game g, int id) {
+        gameRepository.update(g, id);
     }
 
     //Get games by keyword
