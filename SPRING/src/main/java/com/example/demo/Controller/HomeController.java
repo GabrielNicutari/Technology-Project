@@ -38,15 +38,19 @@ public class HomeController {
         return "home/index";
     }
 
-
     @RequestMapping(value="/games/delete", method = {RequestMethod.DELETE, RequestMethod.GET})
     //@GetMapping("/games/delete/{id}")
     public String delete(int id) {
-        boolean deleted = gameService.deleteRow(id);
+        gameService.deleteRow(id);
         return "redirect:/games";
     }
 
-
+    //UPDATE METHOD
+    @RequestMapping(value="/update", method = {RequestMethod.PUT, RequestMethod.GET})
+    public String update(Game game) {
+       //GameService.update(game);
+        return "redirect:/games";
+    }
 
 //    public List<Person> getAllPersons() {
 //        return personService.fetchAll();
