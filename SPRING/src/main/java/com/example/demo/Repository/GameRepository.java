@@ -2,6 +2,8 @@ package com.example.demo.Repository;
 
 import com.example.demo.Model.Game;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -20,17 +22,23 @@ public class GameRepository {
         RowMapper<Game> rowMapper = new BeanPropertyRowMapper<>(Game.class);
         return template.query(query, rowMapper);
     }
+  
+    public Game add(Game g) {
+        String query = "INSERT INTO games" +
+                "VALUES (default, ?, ?, ?, ?, ?, ?, ?, ?)";
+        template.update(query, g.getId(), g.getName(), g.getGenre(), g.getMode(), g.getReleaseDate(),
+                g.getDeveloper(), g.getPublisher(), g.getEngine());
+        return null;
+    }
 
     public Boolean deleteRow(int id) {
         String query = "DELETE FROM games WHERE id = ?";
         return template.update(query, id) < 0;
     }
 
-   public Game add(Game g) {
-        String query = "INSERT INTO games" +
-                "VALUES (default, ?, ?, ?, ?, ?, ?, ?, ?)";
-        template.update(query, g.getId(), g.getName(), g.getGenre(), g.getMode(), g.getReleaseDate(),
-                g.getDeveloper(), g.getPublisher(), g.getEngine());
-        return null;
+    public List<Game> findByKeyWord(String keyword) {
+        String query = "SELECT * FROM games WHERE name LIKE '%" + keyword + "%'";
+        RowMapper<Game> rowMapper = new BeanPropertyRowMapper<>(Game.class);
+        return template.query(query, rowMapper);
     }
 }
