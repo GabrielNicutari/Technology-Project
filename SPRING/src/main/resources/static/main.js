@@ -10,4 +10,14 @@ $('document').ready(function() {
         $('#deleteModal #delRef').attr('href', href);
         $('#deleteModal').modal();
     });
+
+    $('document').ready(function(){
+        $('.editButton').on('click',function(event){
+
+            event.preventDefault();
+
+            $('#editModal').modal();
+        });
+    });
+
 });
