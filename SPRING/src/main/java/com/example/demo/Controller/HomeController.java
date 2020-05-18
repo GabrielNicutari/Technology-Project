@@ -38,6 +38,12 @@ public class HomeController {
         return "home/index";
     }
 
+    @PostMapping(value="/games/add")
+    public String add(@ModelAttribute Game g) {
+        gameService.add(g);
+        return "redirect:/games";
+    }
+
     @RequestMapping(value="/games/delete", method = {RequestMethod.DELETE, RequestMethod.GET})
     //@GetMapping("/games/delete/{id}")
     public String delete(int id) {
@@ -51,18 +57,4 @@ public class HomeController {
        //GameService.update(game);
         return "redirect:/games";
     }
-
-//    public List<Person> getAllPersons() {
-//        return personService.fetchAll();
-//    }
-//
-//    @RequestMapping("/persons/{id}")
-//    public Person getPerson(@PathVariable int id) {
-//        return personService.getPerson(id);
-//    }
-
-//    @RequestMapping(method = RequestMethod.POST, value = "/persons")
-//    public void addPerson(@RequestBody Person person) {
-//        personService.addPerson(person);
-//    }
 }

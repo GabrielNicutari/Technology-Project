@@ -22,6 +22,14 @@ public class GameRepository {
         RowMapper<Game> rowMapper = new BeanPropertyRowMapper<>(Game.class);
         return template.query(query, rowMapper);
     }
+  
+    public Game add(Game g) {
+        String query = "INSERT INTO games" +
+                "VALUES (default, ?, ?, ?, ?, ?, ?, ?, ?)";
+        template.update(query, g.getId(), g.getName(), g.getGenre(), g.getMode(), g.getReleaseDate(),
+                g.getDeveloper(), g.getPublisher(), g.getEngine());
+        return null;
+    }
 
     public Boolean deleteRow(int id) {
         String query = "DELETE FROM games WHERE id = ?";
