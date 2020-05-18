@@ -20,8 +20,8 @@ public class GameService {
         return gameRepository.fetchAll();
     }
   
-    public Game add(Game g) {
-        return gameRepository.add(g);
+    public void add(Game g) {
+       gameRepository.add(g);
     }
 
     public boolean deleteRow(int id) {
