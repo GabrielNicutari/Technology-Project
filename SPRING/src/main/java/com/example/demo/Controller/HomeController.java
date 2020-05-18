@@ -21,7 +21,7 @@ public class HomeController {
     }
 
     @GetMapping("/games")
-    public String persons(Model model) {
+    public String games(Model model) {
         List<Game> gameList = gameService.fetchAll();
         model.addAttribute("games", gameList);
         return "home/index";
@@ -30,7 +30,7 @@ public class HomeController {
     @RequestMapping(value="/games/delete", method = {RequestMethod.DELETE, RequestMethod.GET})
     //@GetMapping("/games/delete/{id}")
     public String delete(int id) {
-        boolean deleted = gameService.deleteRow(id);
+        gameService.deleteRow(id);
         return "redirect:/games";
     }
 
