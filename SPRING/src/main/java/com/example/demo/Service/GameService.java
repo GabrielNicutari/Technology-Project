@@ -28,13 +28,12 @@ public class GameService {
         return gameRepository.deleteRow(id);
     }
 
+    public void update(Game g) {
+        gameRepository.add(g);
+    }
+
     //Get games by keyword
     public List<Game> findByKeyWord(String keyword) {
         return gameRepository.findByKeyWord(keyword);
     }
-  
-    //UPDATE METHOD
-    //public void update(Game) {
-        //gameRepository.save(Game);
-    //}
 }
