@@ -31,7 +31,7 @@ public class HomeController {
     @RequestMapping(value="/games/delete", method = {RequestMethod.DELETE, RequestMethod.GET})
     //@GetMapping("/games/delete/{id}")
     public String delete(int id) {
-        boolean deleted = gameService.deleteRow(id);
+        gameService.deleteRow(id);
         return "redirect:/games";
     }
 
