@@ -23,6 +23,11 @@ public class GameService {
     public boolean deleteRow(int id) {
         return gameRepository.deleteRow(id);
     }
+
+    //Get games by keyword
+    public List<Game> findByKeyWord(String keyword) {
+        return gameRepository.findByKeyWord(keyword);
+    }
   
     //UPDATE METHOD
     //public void update(Game) {

@@ -27,4 +27,10 @@ public class GameRepository {
         String query = "DELETE FROM games WHERE id = ?";
         return template.update(query, id) < 0;
     }
+
+    public List<Game> findByKeyWord(String keyword) {
+        String query = "SELECT * FROM games WHERE name LIKE '%" + keyword + "%'";
+        RowMapper<Game> rowMapper = new BeanPropertyRowMapper<>(Game.class);
+        return template.query(query, rowMapper);
+    }
 }
