@@ -37,7 +37,7 @@ public class HomeController {
     //UPDATE METHOD
     @RequestMapping(value="/update", method = {RequestMethod.PUT, RequestMethod.GET})
     public String update(Game game) {
-       // GameService.update(game);
+       //GameService.update(game);
         return "redirect:/games";
     }
 
