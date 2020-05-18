@@ -21,10 +21,27 @@ public class HomeController {
     }
 
     @GetMapping("/games")
-    public String games(Model model) {
+    public String games(Model model, String keyword) {
         List<Game> gameList = gameService.fetchAll();
         model.addAttribute("games", gameList);
+
+        if (keyword != null) {
+            if(keyword.equals("")) {
+                return "redirect:/games";
+            } else {
+                model.addAttribute("games", gameService.findByKeyWord(keyword));
+            }
+        } else {
+            model.addAttribute("games", gameService.fetchAll());
+        }
+
         return "home/index";
+    }
+
+    @PostMapping(value="/games/add")
+    public String add(@ModelAttribute Game g) {
+        gameService.add(g);
+        return "redirect:/games";
     }
 
     @RequestMapping(value="/games/delete", method = {RequestMethod.DELETE, RequestMethod.GET})
@@ -40,18 +57,4 @@ public class HomeController {
        gameService.update(g);
         return "redirect:/games";
     }
-
-//    public List<Person> getAllPersons() {
-//        return personService.fetchAll();
-//    }
-//
-//    @RequestMapping("/persons/{id}")
-//    public Person getPerson(@PathVariable int id) {
-//        return personService.getPerson(id);
-//    }
-
-//    @RequestMapping(method = RequestMethod.POST, value = "/persons")
-//    public void addPerson(@RequestBody Person person) {
-//        personService.addPerson(person);
-//    }
 }

@@ -19,6 +19,10 @@ public class GameService {
         //personRepository.fetchAll().forEach(persons::add);  //Get everything from the db and add it into an arraylist
         return gameRepository.fetchAll();
     }
+  
+    public Game add(Game g) {
+        return gameRepository.add(g);
+    }
 
     public boolean deleteRow(int id) {
         return gameRepository.deleteRow(id);
@@ -26,5 +30,10 @@ public class GameService {
 
     public void update(Game g) {
         gameRepository.add(g);
+    }
+
+    //Get games by keyword
+    public List<Game> findByKeyWord(String keyword) {
+        return gameRepository.findByKeyWord(keyword);
     }
 }

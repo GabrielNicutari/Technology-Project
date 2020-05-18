@@ -22,18 +22,22 @@ public class GameRepository {
         RowMapper<Game> rowMapper = new BeanPropertyRowMapper<>(Game.class);
         return template.query(query, rowMapper);
     }
+  
+    public void add(Game g) {
+        String query = "INSERT INTO games(name, genre, rating, mode, releaseDate, developer, publisher, engine)" +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        template.update(query, g.getName(), g.getGenre(), g.getRating(), g.getMode(), g.getReleaseDate(),
+                g.getDeveloper(), g.getPublisher(), g.getEngine());
+    }
 
     public Boolean deleteRow(int id) {
         String query = "DELETE FROM games WHERE id = ?";
         return template.update(query, id) < 0;
     }
 
-    public Game add(Game g) {
-        String query = "INSERT INTO games " +
-                "VALUES (DEFAULT, ?, ?, ?, ?, ?, ?, ?, ?,?)";
-        template.update(query, g.getId(), g.getName(), g.getGenre(), g.getRating(),
-                g.getMode(), g.getReleaseDate(), g.getDeveloper(), g.getPublisher(),
-                g.getEngine());
-        return g;
+    public List<Game> findByKeyWord(String keyword) {
+        String query = "SELECT * FROM games WHERE name LIKE '%" + keyword + "%'";
+        RowMapper<Game> rowMapper = new BeanPropertyRowMapper<>(Game.class);
+        return template.query(query, rowMapper);
     }
 }

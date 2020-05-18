@@ -25,11 +25,11 @@
 <!--                <button type="submit"><i class="fa fa-search"></i></button>-->
 <!--            </form>-->
 
-<!--            <form th:action="@{/games}" method="get">-->
-<!--                <input id="txtSearch" type="text" name="keyword">-->
-<!--                <button type="submit">Search</button>-->
-<!--            </form>-->
-            <input id="txtSearch" type="text" name="keyword">
+            <form th:action="@{/games}" method="get">
+                <input type="text" name="keyword">
+                <button type="submit">Search</button>
+            </form>
+<!--            <input id="txtSearch" type="text" name="keyword">-->
 
         </div>
 
@@ -42,9 +42,11 @@
             <br/>
             <br/>
             <h2>List of Games</h2>
-            <a href="@{'/create/'+${game.id}}">
-                <button class="btn-create">Add new</button>
+          
+            <a th:action="@{/games/add}" method="post">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal" >Add game</button>
             </a>
+       
             <table id="gamesTable">
                 <!--caption><h2>List Of Persons</h2></caption-->
                 <thead>
@@ -182,6 +184,74 @@
         }
 
     </script>
+
+    <!-- add bootstrap modal -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <form th:action="@{/games/add}" method="post"
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New game</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <!--div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Id:</label>
+                            <input type="text" class="form-control" id="recipient-id" name="id">
+                        </div-->
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="recipient-name" name="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Genre:</label>
+                            <input type="text" class="form-control" id="recipient-genre" name="genre">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Rating:</label>
+                            <input type="text" class="form-control" id="recipient-rating" name="rating">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Mode:</label>
+                            <input type="text" class="form-control" id="recipient-mode" name="mode">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Release date:</label>
+                            <input type="text" class="form-control" id="recipient-releaseDate" name="releaseDate">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Developer:</label>
+                            <input type="text" class="form-control" id="recipient-developer" name="developer">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Publisher:</label>
+                            <input type="text" class="form-control" id="recipient-publisher" name="publisher">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Engine:</label>
+                            <input type="text" class="form-control" id="recipient-engine" name="engine">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
   
     <!-- edit bootstrap modal -->
     <div>
@@ -252,7 +322,8 @@
             </form>
         </form>
     </div>
-
+    
+    <!-- delete bootstrap modal -->
     <div class="modal fade" tabindex="-1" role="dialog" id="deleteModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
