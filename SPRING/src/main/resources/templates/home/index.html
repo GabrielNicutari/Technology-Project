@@ -206,42 +206,48 @@
 
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Name:</label>
-                            <input type="text" class="form-control" id="recipient-name" name="name">
+                            <input type="text" pattern="[^;]+" oninvalid="this.setCustomValidity('Please fill out this field. The following characters are not allowed: \' ; \' ')"
+                                   oninput="this.setCustomValidity('')" class="form-control" id="recipient-name" name="name" required>
                         </div>
 
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Genre:</label>
-                            <input type="text" class="form-control" id="recipient-genre" name="genre">
+                            <input type="text" pattern="[^;]+" oninvalid="this.setCustomValidity('Please fill out this field. The following characters are not allowed: \' ; \' ')"
+                                   oninput="this.setCustomValidity('')" class="form-control" id="recipient-genre" name="genre" required>
                         </div>
 
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Rating:</label>
-                            <input type="text" class="form-control" id="recipient-rating" name="rating">
+                            <input type="number" step="0.1" min="0.0" class="form-control" id="recipient-rating" name="rating" required>
                         </div>
 
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Mode:</label>
-                            <input type="text" class="form-control" id="recipient-mode" name="mode">
+                            <input type="text" pattern="[^;]+" oninvalid="this.setCustomValidity('Please fill out this field. The following characters are not allowed: \' ; \' ')"
+                                   oninput="this.setCustomValidity('')" class="form-control" id="recipient-mode" name="mode" required>
                         </div>
 
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Release date:</label>
-                            <input type="text" class="form-control" id="recipient-releaseDate" name="releaseDate">
+                            <input type="date" class="form-control" id="recipient-releaseDate" name="releaseDate" required>
                         </div>
 
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Developer:</label>
-                            <input type="text" class="form-control" id="recipient-developer" name="developer">
+                            <input type="text" pattern="[^;]+" oninvalid="this.setCustomValidity('Please fill out this field. The following characters are not allowed: \' ; \' ')"
+                                   oninput="this.setCustomValidity('')" class="form-control" id="recipient-developer" name="developer" required>
                         </div>
 
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Publisher:</label>
-                            <input type="text" class="form-control" id="recipient-publisher" name="publisher">
+                            <input type="text" pattern="[^;]+" oninvalid="this.setCustomValidity('Please fill out this field. The following characters are not allowed: \' ; \' ')"
+                                   oninput="this.setCustomValidity('')" class="form-control" id="recipient-publisher" name="publisher" required>
                         </div>
 
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Engine:</label>
-                            <input type="text" class="form-control" id="recipient-engine" name="engine">
+                            <input type="text" pattern="[^;]+" oninvalid="this.setCustomValidity('Please fill out this field. The following characters are not allowed: \' ; \' ')"
+                                   oninput="this.setCustomValidity('')" class="form-control" id="recipient-engine" name="engine" required>
                         </div>
 
                     </div>
@@ -274,42 +280,48 @@
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Name:</label>
-                                <input type="text" class="form-control" id="nameEdit" name="name">
+                                <input type="text" pattern="[^;]+" oninvalid="this.setCustomValidity('Please fill out this field. The following characters are not allowed: \' ; \' ')"
+                                       oninput="this.setCustomValidity('')" class="form-control" id="nameEdit" name="name" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Genre:</label>
-                                <input type="text" class="form-control" id="genreEdit" name="genre">
+                                <input type="text" pattern="[^;]+" oninvalid="this.setCustomValidity('Please fill out this field. The following characters are not allowed: \' ; \' ')"
+                                       oninput="this.setCustomValidity('')" class="form-control" id="genreEdit" name="genre" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Rating:</label>
-                                <input type="text" class="form-control" id="ratingEdit" name="rating">
+                                <input type="number" step="0.1" min="0.0" class="form-control" id="ratingEdit" name="rating" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Mode:</label>
-                                <input type="text" class="form-control"  id="modeEdit" name="mode">
+                                <input type="text" pattern="[^;]+" oninvalid="this.setCustomValidity('Please fill out this field. The following characters are not allowed: \' ; \' ')"
+                                       oninput="this.setCustomValidity('')" class="form-control"  id="modeEdit" name="mode" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Release date:</label>
-                                <input type="text" class="form-control"  id="releaseDateEdit" name="releaseDate">
+                                <input type="date" class="form-control"  id="releaseDateEdit" name="releaseDate" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Developer:</label>
-                                <input type="text" class="form-control"  id="developerEdit" name="developer">
+                                <input type="text" pattern="[^;]+" oninvalid="this.setCustomValidity('Please fill out this field. The following characters are not allowed: \' ; \' ')"
+                                       oninput="this.setCustomValidity('')" class="form-control"  id="developerEdit" name="developer" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Publisher:</label>
-                                <input type="text" class="form-control"  id="publisherEdit" name="publisher">
+                                <input type="text" pattern="[^;]+" oninvalid="this.setCustomValidity('Please fill out this field. The following characters are not allowed: \' ; \' ')"
+                                       oninput="this.setCustomValidity('')" class="form-control"  id="publisherEdit" name="publisher" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Engine:</label>
-                                <input type="text" class="form-control"  id="engineEdit" name="engine">
+                                <input type="text" pattern="[^;]+" oninvalid="this.setCustomValidity('Please fill out this field. The following characters are not allowed: \' ; \' ')"
+                                       oninput="this.setCustomValidity('')" class="form-control"  id="engineEdit" name="engine" required>
                             </div>
 
                         </div>
@@ -327,7 +339,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Confirm Delete</h5>
+                     <h5 class="modal-title">Confirm Delete</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
