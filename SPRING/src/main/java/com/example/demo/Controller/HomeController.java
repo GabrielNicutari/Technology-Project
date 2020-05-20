@@ -41,12 +41,6 @@ public class HomeController {
         return "home/index";
     }
 
-//    @RequestMapping("/games/getOne/{id}")
-//    @ResponseBody
-//    public Game getOne(@PathVariable ("id") int id) {
-//        return gameService.getOne(id);
-//    }
-
     @RequestMapping("/games/getOne")
     @ResponseBody
     public Game getOne(int id) {
