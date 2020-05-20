@@ -21,14 +21,14 @@ header {
 h1 {
     font-weight: bold;
     color: #757474;
-    font-size: 100px;
+    font-size: 150px;
     text-align: center;
 }
 
 h2 {
     font-weight: bold;
     color: #757474;
-    font-size: 72px;
+    font-size: 100px;
     text-align: center;
 }
 
@@ -72,7 +72,8 @@ table {
     width: 100%;
 }
 th {
-    background-color: #2196F3;
+    color: white;
+    background-color: #151515;
 }
 td, th {
     border-bottom: 1px solid #ddd;
@@ -93,6 +94,25 @@ td, th {
     width: 100%;
 }
 
+.btn-delete:hover {
+    opacity: 0.6;
+    color: white;
+}
+
+.btn-add {
+    background-color: #151515;
+    color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.btn-add:hover {
+    opacity: 0.6;
+    color: white;
+}
+
+
 .btn-update {
     background-color: green;
     border: none;
@@ -104,6 +124,11 @@ td, th {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     width: 100%;
+}
+
+.btn-update:hover {
+    opacity: 0.6;
+    color: white;
 }
 
 /* SEARCH BAR */
@@ -146,10 +171,12 @@ form.example button {
 .search-box:hover > .search-txt {
     width: 240px;
     padding: 0 6px;
+    color: white;
 }
 
 .search-box:hover > .search-btn {
     background: white;
+    color: white;
 }
 
 .search-btn {
@@ -169,7 +196,7 @@ form.example button {
     outline: none;
     float: left;
     padding: 0;
-    color: #eeecec;
+    color: white;
     font-size: 16px;
     transition: 0.4s;
     line-height: 50px;
