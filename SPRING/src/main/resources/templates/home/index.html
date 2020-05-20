@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-        <meta charset="UTF-8">
-        <title>Technology Project</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="/webjars/bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet" />
-        <script type="text/javascript" src="/webjars/jquery/3.4.1/jquery.min.js"></script>
-        <script type="text/javascript" src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/static/main.js" th:src="@{/main.js}"></script>
+    <title>Technology Project</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet" />
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script type="text/javascript" src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/main.js" th:src="@{/main.js}"></script>
 </head>
 <body>
 
     <header>
+        <a href="/games">
+            <img  class="logo" src="logo2.png" alt="logo">
+        </a>
+
+        <nav>
+            <form class="search-box" th:action="@{/games}" method="get">
+                <a href="#">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </a>
+                <input class ="search-txt" type="text" name="keyword" placeholder="Type to search">
+            </form>
+        </nav>
+
         <div id="header-wrapper">
             <!-- SEARCH BAR -->
-            <h2>Search For A Game</h2>
 
-<!--            The form -->
-<!--            <form class="example" action="action_page.php">-->
-<!--                <input type="text" placeholder="Search.." name="search">-->
-<!--                <button type="submit"><i class="fa fa-search"></i></button>-->
+
+
+<!--            <form class="example" th:action="@{/games}" method="get" >-->
+<!--                <input type="text" name="keyword">-->
+<!--                <button class="example" type="submit" >Search</button>-->
 <!--            </form>-->
 
-            <form th:action="@{/games}" method="get">
-                <input type="text" name="keyword">
-                <button type="submit">Search</button>
-            </form>
 <!--            <input id="txtSearch" type="text" name="keyword">-->
 
         </div>

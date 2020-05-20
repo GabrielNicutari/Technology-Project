@@ -2,10 +2,27 @@ body {
     font-family: Calibri;
 }
 
+header {
+    background: #151515;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 10%;
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+    width: 7%;
+    height: auto;
+}
+
+
 h1 {
     font-weight: bold;
     color: #757474;
     font-size: 100px;
+    text-align: center;
 }
 
 h2 {
@@ -95,9 +112,9 @@ td, th {
 form.example input[type=text] {
     padding: 10px;
     font-size: 17px;
-    border: 1px solid grey;
+    border: 1px solid #535353;
     float: left;
-    width: 80%;
+    width: 40%;
     background: #f1f1f1;
 }
 
@@ -107,14 +124,55 @@ form.example button {
     width: 15%;
     padding: 10px;
     background: #2196F3;
-    color: white;
+    color: #e05555;
     font-size: 17px;
     border: 1px solid grey;
     border-left: none;
     cursor: pointer;
+    border-radius: 4px;
 }
 
-#txtSearch {
+.search-box {
+    position: absolute;
+    top: 12.5%;
+    left: 15%;
+    transform: translate(0, -100%);
+    background: #2f3640;
+    height: 60px;
+    border-radius: 40px;
+    padding: 10px;
+}
 
+.search-box:hover > .search-txt {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn {
+    background: white;
+}
+
+.search-btn {
+    color: #ac2323;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-txt {
+    border:none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #eeecec;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 50px;
+    width: 0px;
 }
 

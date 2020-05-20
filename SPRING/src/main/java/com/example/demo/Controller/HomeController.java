@@ -33,7 +33,8 @@ public class HomeController {
             } else {
                 model.addAttribute("games", gameService.findByKeyWord(keyword));
             }
-        } else {
+        }
+        else {
             model.addAttribute("games", gameService.fetchAll());
         }
 
