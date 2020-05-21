@@ -91,10 +91,8 @@
 
                         <td>
                             <div class="btn-group">
-<!--                                <a href="" class="btn-delete deleteButton"><i class ="fa fa-trash"></i></a>-->
-                                <a th:href="@{/games/delete/(id=${game.id})}" class="btn-delete deleteButton"><i class ="fa fa-trash"></i></a>
-<!--                                <a th:href="@{/games/getOne/${game.id}}" class="btn-update editButton"><i class="fa fa-edit"></i></a>-->
                                 <a th:href="@{/games/getOne/(id=${game.id})}" class="btn-update editButton"><i class="fa fa-edit"></i></a>
+                                <a th:href="@{/games/delete/(id=${game.id})}" class="btn-delete deleteButton"><i class ="fa fa-trash"></i></a>
                             </div>
                         </td>
                     </tr>
