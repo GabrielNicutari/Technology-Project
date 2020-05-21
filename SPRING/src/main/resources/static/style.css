@@ -17,13 +17,60 @@ header {
     height: auto;
 }
 
+.modal-header {
+    border-bottom: 1px solid darkgray!important;
+}
+
+.modal-header .close {
+    color: #dddddd!important;
+}
+
+.modal-content {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #363838!important;
+    background-clip: padding-box;
+    border: 1px solid darkgray!important;
+    border-radius: 0.3rem;
+    outline: 0;
+    color: #F7FCFC!important;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+}
+
+.modal-footer {
+    border-top: 1px solid darkgray!important;
+}
 
 h1 {
+    display: inline-block;
+    width: 60%;
+    float: right;
     font-weight: bold;
-    color: #757474;
+    color: whitesmoke;
     font-size: 150px;
-    text-align: center;
+    /*text-align: center;*/
 }
+
+/*h1{*/
+/*    display: inline-block;*/
+/*    width: 50%;*/
+/*    min-width: 150px;*/
+/*    float: top;*/
+/*}*/
 
 h2 {
     font-weight: bold;
