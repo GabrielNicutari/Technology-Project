@@ -25,16 +25,14 @@
 
         <h1>List of Games</h1>
 
-        <nav>
-            <form class="search-box" th:action="@{/games}" method="get">
-                <a href="#">
-                    <button class="search-btn"><i class="fas fa-search"></i></button>
-                </a>
-                <input class ="search-txt" type="text" name="keyword" placeholder="Type to search">
-            </form>
 
+        <form class="search-box" th:action="@{/games}" method="get">
+            <a href="#">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </a>
+            <input class ="search-txt" type="text" name="keyword" placeholder="Type to search">
+        </form>
 
-        </nav>
 
         <div id="header-wrapper">
             <!-- SEARCH BAR -->
