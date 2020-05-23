@@ -59,7 +59,9 @@
             <h1>List of Games</h1>
           
             <a th:action="@{/games/add}" method="post">
-                <button type="button" class="btn-add" data-toggle="modal" data-target="#addModal" >Add game</button>
+                <div align="right" >
+                <button type="button" class="btn-add" data-toggle="modal" data-target="#addModal" ><i class ="fa fa-plus"></i></button>
+                </div>
             </a>
        
             <table id="gamesTable">
