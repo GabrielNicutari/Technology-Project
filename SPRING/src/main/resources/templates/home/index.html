@@ -25,16 +25,14 @@
 
         <h1>List of Games</h1>
 
-        <nav>
-            <form class="search-box" th:action="@{/games}" method="get">
-                <a href="#">
-                    <button class="search-btn"><i class="fas fa-search"></i></button>
-                </a>
-                <input class ="search-txt" type="text" name="keyword" placeholder="Type to search">
-            </form>
 
+        <form class="search-box" th:action="@{/games}" method="get">
+            <a href="#">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </a>
+            <input class ="search-txt" type="text" name="keyword" placeholder="Type to search">
+        </form>
 
-        </nav>
 
         <div id="header-wrapper">
             <!-- SEARCH BAR -->
@@ -55,6 +53,10 @@
 
     <main>
         <div id="page-wrapper">
+            <br/>
+            <br/>w
+            <br/>
+            <h1>List of Games</h1>
           
             <a th:action="@{/games/add}" method="post">
                 <div align="right" >
@@ -93,10 +95,8 @@
 
                         <td>
                             <div class="btn-group">
-<!--                                <a href="" class="btn-delete deleteButton"><i class ="fa fa-trash"></i></a>-->
-                                <a th:href="@{/games/delete/(id=${game.id})}" class="btn-delete deleteButton"><i class ="fa fa-trash"></i></a>
-<!--                                <a th:href="@{/games/getOne/${game.id}}" class="btn-update editButton"><i class="fa fa-edit"></i></a>-->
                                 <a th:href="@{/games/getOne/(id=${game.id})}" class="btn-update editButton"><i class="fa fa-edit"></i></a>
+                                <a th:href="@{/games/delete/(id=${game.id})}" class="btn-delete deleteButton"><i class ="fa fa-trash"></i></a>
                             </div>
                         </td>
                     </tr>
