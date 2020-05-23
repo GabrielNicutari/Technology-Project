@@ -3,7 +3,8 @@ body {
 }
 
 header {
-    background: #151515;
+    background: url('Frederi_skole.png') center center;'
+    height: 500px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -105,11 +106,17 @@ td, th {
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 25px;
+    border-style: none;
 }
 
 .btn-add:hover {
     opacity: 0.6;
     color: white;
+    border-style: none;
+}
+
+.btn-add:focus {
+    border-style: none;
 }
 
 
