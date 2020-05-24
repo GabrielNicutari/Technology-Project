@@ -3,7 +3,7 @@ body {
 }
 
 header {
-    background: url('header.png') center -12px;'
+    background: url('Nav.png') center -12px;'
     object-fit: cover;
     height: 180px;
     display: flex;
@@ -236,7 +236,8 @@ td, th, tr {
 
 .add-txt {
     position: relative;
-    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Montserrat', sans-serif;*/
+    font-family: "Times New Roman", sans-serif;
     font-style: normal;
     font-size: 15px;
     z-index: 1;
