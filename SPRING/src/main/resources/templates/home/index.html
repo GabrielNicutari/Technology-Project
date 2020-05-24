@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="/webjars/bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/qqq4rfx.css">
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script type="text/javascript" src="/webjars/jquery/3.4.1/jquery.min.js"></script>
@@ -23,7 +25,7 @@
             <img  class="logo" src="logo2.png" alt="logo">
         </a>
 
-        <h1>List of Games</h1>
+        <h1 class = "title">IGDb</h1>
 
 
         <form class="search-box" th:action="@{/games}" method="get">
@@ -37,35 +39,28 @@
         <div id="header-wrapper">
             <!-- SEARCH BAR -->
 
-
-
 <!--            <form class="example" th:action="@{/games}" method="get" >-->
 <!--                <input type="text" name="keyword">-->
 <!--                <button class="example" type="submit" >Search</button>-->
 <!--            </form>-->
 
 <!--            <input id="txtSearch" type="text" name="keyword">-->
-
         </div>
 
     </header>
 
 
+
     <main>
         <div id="page-wrapper">
-            <br/>
-            <br/>w
-            <br/>
-            <h1>List of Games</h1>
-          
+
             <a th:action="@{/games/add}" method="post">
                 <div align="right" >
-                <button type="button" class="btn-add" data-toggle="modal" data-target="#addModal" ><i class ="fa fa-plus"></i></button>
+                    <button type="button" class="btn-add" data-toggle="modal" data-target="#addModal" ><span class="add-txt">Add New Game</span></button>
                 </div>
             </a>
        
             <table id="gamesTable">
-                <!--caption><h2>List Of Persons</h2></caption-->
                 <thead>
                     <tr>
                         <th>ID</th>
