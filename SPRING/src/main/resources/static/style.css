@@ -3,7 +3,7 @@ body {
 }
 
 header {
-    background: url('Nav.png') center -12px;'
+    background: url('header.png') center -12px;'
     object-fit: cover;
     height: 180px;
     display: flex;
