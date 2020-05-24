@@ -236,8 +236,7 @@ td, th, tr {
 
 .add-txt {
     position: relative;
-    /*font-family: 'Montserrat', sans-serif;*/
-    font-family: "Times New Roman", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-size: 15px;
     z-index: 1;
