@@ -130,9 +130,9 @@ th {
     color: white;
     background-color: #151515;
 }
-td, th {
+td, th, tr {
     border-bottom: 1px solid #ddd;
-    text-align: left;
+    text-align: center;
     padding: 4px;
 }
 
@@ -212,7 +212,7 @@ td, th {
     margin: 10px 0;
     border: 3px solid #e05555;
     border-radius: 8px;
-    padding: 14px 13px;
+    padding: 14px 9px;
     overflow: hidden;
     transition: 1s all ease;
 }
@@ -238,7 +238,7 @@ td, th {
     position: relative;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
-    font-size: 13px;
+    font-size: 15px;
     z-index: 1;
 }
 
